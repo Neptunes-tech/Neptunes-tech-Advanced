@@ -48,14 +48,14 @@ export default function CustomCursor() {
     const onMouseEnter = () => {
       isHovering.current = true
       dot.style.opacity = '0'
-      outline.style.borderColor = 'rgba(139, 92, 246, 0.7)'
-      outline.style.backgroundColor = 'rgba(139, 92, 246, 0.1)'
+      outline.style.borderColor = 'rgba(14, 165, 233, 0.7)'
+      outline.style.backgroundColor = 'rgba(14, 165, 233, 0.1)'
     }
 
     const onMouseLeave = () => {
       isHovering.current = false
       dot.style.opacity = '1'
-      outline.style.borderColor = 'rgba(139, 92, 246, 0.4)'
+      outline.style.borderColor = 'rgba(14, 165, 233, 0.4)'
       outline.style.backgroundColor = 'transparent'
     }
 
@@ -115,7 +115,7 @@ export default function CustomCursor() {
     <div className="pointer-events-none fixed inset-0 z-[9999] hidden md:block overflow-hidden">
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-violet-400"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-sky-400"
         style={{
           willChange: 'transform',
           transition: 'opacity 0.15s ease',
@@ -124,7 +124,7 @@ export default function CustomCursor() {
       
       <div
         ref={outlineRef}
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-violet-500/40"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-sky-500/40"
         style={{
           willChange: 'transform',
           transition: 'border-color 0.2s ease, background-color 0.2s ease',

@@ -79,28 +79,27 @@ export default function MasonryPortfolio() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-24 md:py-32 overflow-hidden bg-background"
       id="portfolio"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0520] via-[#030014] to-[#0a0520]" />
       
-      <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[150px] animate-pulse" />
+      <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-sky-600/10 rounded-full blur-[150px] animate-pulse" />
       <div className="absolute bottom-40 left-20 w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
         <div ref={headerRef} className="text-center mb-12 md:mb-16">
-          <span className="inline-block px-4 py-2 mb-6 text-sm font-medium text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+          <span className="inline-block px-4 py-2 mb-6 text-sm font-medium text-sky-600 dark:text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded-full">
             Our Portfolio
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+            <span className="text-foreground">
               Featured
             </span>{' '}
-            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-500 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
             Explore our latest work and see how we bring innovative ideas to life through cutting-edge technology
           </p>
 
@@ -111,8 +110,8 @@ export default function MasonryPortfolio() {
                 onClick={() => setActiveFilter(category)}
                 className={`magnetic px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeFilter === category
-                    ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/30'
-                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
+                    ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-500/30'
+                    : 'bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground border border-border'
                 }`}
               >
                 {category}
@@ -151,7 +150,7 @@ export default function MasonryPortfolio() {
                     {item.category}
                   </span>
 
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors">
                     {item.title}
                   </h3>
 
@@ -170,7 +169,7 @@ export default function MasonryPortfolio() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-violet-400 font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-sky-400 font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <span>View Project</span>
                     <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
@@ -180,19 +179,19 @@ export default function MasonryPortfolio() {
                   <ExternalLink size={16} className="text-white" />
                 </div>
 
-                <div className={`absolute inset-0 rounded-2xl border border-white/10 group-hover:border-violet-500/50 transition-colors duration-500`} />
+                <div className={`absolute inset-0 rounded-2xl border border-white/10 group-hover:border-sky-500/50 transition-colors duration-500`} />
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-16">
-          <button className="magnetic group relative px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/50">
+          <button className="magnetic group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/50">
             <span className="relative z-10 flex items-center gap-2">
               View All Projects
               <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </div>
       </div>

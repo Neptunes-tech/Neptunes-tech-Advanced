@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 
-export default function ContactEnhanced() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -35,7 +35,7 @@ export default function ContactEnhanced() {
     setFocused(field)
     if (inputRefs.current[field]) {
       gsap.to(inputRefs.current[field], {
-        boxShadow: '0 0 30px rgba(147, 51, 234, 0.5)',
+        boxShadow: '0 0 30px rgba(14, 165, 233, 0.5)',
         borderColor: 'var(--primary)',
         duration: 0.3,
         ease: 'power2.out',

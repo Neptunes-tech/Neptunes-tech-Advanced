@@ -37,10 +37,10 @@ export default function ThreeBackground({ className = '' }) {
       const colors = new Float32Array(particleCount * 3)
 
       const colorPalette = [
-        new THREE.Color(0x8b5cf6),
-        new THREE.Color(0xa855f7),
+        new THREE.Color(0x0ea5e9),
+        new THREE.Color(0x38bdf8),
         new THREE.Color(0x06b6d4),
-        new THREE.Color(0xd946ef),
+        new THREE.Color(0x22d3ee),
       ]
 
       for (let i = 0; i < particleCount; i++) {

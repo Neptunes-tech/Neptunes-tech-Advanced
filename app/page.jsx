@@ -1,30 +1,30 @@
 'use client'
 
-import HeaderEnhanced from '@/components/HeaderEnhanced'
-import HeroEnhanced from '@/components/HeroEnhanced'
-import ServicesEnhanced from '@/components/ServicesEnhanced'
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import Services from '@/components/Services'
 import Solutions from '@/components/Solutions'
 import MasonryPortfolio from '@/components/MasonryPortfolio'
 import About from '@/components/About'
-import TestimonialsEnhanced from '@/components/TestimonialsEnhanced'
+import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
-import ContactEnhanced from '@/components/ContactEnhanced'
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import CustomCursor from '@/components/CustomCursor'
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-[#030014]">
+    <main className="overflow-hidden bg-background">
       <CustomCursor />
-      <HeaderEnhanced />
-      <HeroEnhanced />
+      <Header />
+      <Hero />
       <About />
-      <ServicesEnhanced />
+      <Services />
       <Solutions />
       <MasonryPortfolio />
-      <TestimonialsEnhanced />
+      <Testimonials />
       <CTA />
-      <ContactEnhanced />
+      <Contact />
       <Footer />
     </main>
   )
