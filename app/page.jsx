@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Solutions from '@/components/Solutions'
+import CompanyProjects from '@/components/CompanyProjects'
 import MasonryPortfolio from '@/components/MasonryPortfolio'
 import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
@@ -21,6 +22,7 @@ export default function Home() {
       <About />
       <Services />
       <Solutions />
+      <CompanyProjects />
       <MasonryPortfolio />
       <Testimonials />
       <CTA />
