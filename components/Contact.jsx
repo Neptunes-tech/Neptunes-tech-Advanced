@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { EMAIL } from '../lib/mockData'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -103,7 +104,7 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@neptunestech.com',
+      value: EMAIL,
     },
     {
       icon: Phone,

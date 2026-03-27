@@ -38,6 +38,7 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target='_blank'
                     className="magnetic w-10 h-10 rounded-full bg-sky-500/5 border border-sky-500/10 flex items-center justify-center text-muted-foreground hover:text-sky-500 hover:border-sky-500/50 hover:bg-sky-500/10 transition-all duration-300"
                   >
                     <Icon size={18} />
