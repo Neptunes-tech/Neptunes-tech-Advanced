@@ -8,7 +8,7 @@ export default function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section id="solutions" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="solutions" className="pt-20 pb-10 md:pt-32 md:pb-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-card/20 to-background"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">

@@ -27,7 +27,7 @@ export default function CompanyProjects() {
   }
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden" id="projects">
+    <section className="pt-10 pb-20 md:pt-16 md:pb-32 relative overflow-hidden" id="projects">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-card/10 to-background"></div>
 
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
