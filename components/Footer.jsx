@@ -56,7 +56,7 @@ export default function Footer() {
                     {link.href.startsWith('/') ? (
                       <Link
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
+                        className="cursor-pointer text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
                       >
                         {link.label}
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 group-hover:w-full transition-all duration-300" />
@@ -64,7 +64,7 @@ export default function Footer() {
                     ) : (
                       <a
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
+                        className="cursor-pointer text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
                       >
                         {link.label}
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 group-hover:w-full transition-all duration-300" />

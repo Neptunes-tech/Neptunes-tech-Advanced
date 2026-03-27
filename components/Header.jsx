@@ -224,7 +224,7 @@ export default function Header() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4" ref={el => navLinksRef.current[navItems.length] = el}>
           <ThemeToggle />
-          <button 
+          {/* <button 
             ref={ctaRef}
             className="magnetic relative px-6 lg:px-8 py-2.5 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-bold rounded-full overflow-hidden group"
             onMouseEnter={handleCtaHover}
@@ -240,7 +240,7 @@ export default function Header() {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 via-white/20 to-cyan-400/20 animate-shimmer" />
             </div>
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile menu button */}

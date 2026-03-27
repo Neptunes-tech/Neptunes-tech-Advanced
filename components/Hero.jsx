@@ -181,14 +181,14 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20">
+      {/* <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20">
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
           <div className="w-6 h-10 border-2 border-sky-500/50 rounded-full flex justify-center p-2">
             <div className="w-1.5 h-1.5 bg-sky-400 rounded-full animate-bounce" />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="absolute top-1/4 left-10 w-3 h-3 bg-sky-500 rounded-full animate-float opacity-60" style={{ animationDelay: '0s' }} />
       <div className="absolute top-1/3 right-20 w-2 h-2 bg-cyan-500 rounded-full animate-float opacity-60" style={{ animationDelay: '1s' }} />
