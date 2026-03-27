@@ -94,6 +94,7 @@
   --gradient-end: #06b6d4;
 }
 
+/* Custom cursor disabled for now
 @media (pointer: fine) and (min-width: 768px) {
   body {
     cursor: none !important;
@@ -102,6 +103,12 @@
   a, button, [data-cursor], .cursor-hover, input, textarea, select {
     cursor: none !important;
   }
+}
+*/
+
+/* Force normal cursor */
+body, a, button, [data-cursor], .cursor-hover, input, textarea, select {
+  cursor: auto !important;
 }
 
 @theme inline {

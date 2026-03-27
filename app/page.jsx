@@ -16,7 +16,7 @@ import CustomCursor from '@/components/CustomCursor'
 export default function Home() {
   return (
     <main className="overflow-hidden bg-background">
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Header />
       <Hero />
       <About />
