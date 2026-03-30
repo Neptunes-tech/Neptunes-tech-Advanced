@@ -176,7 +176,7 @@ export default function Services() {
 
         <div className="mt-16 text-center">
           <button className="magnetic group relative px-10 py-4 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-bold rounded-full overflow-hidden hover:shadow-xl hover:shadow-sky-500/30 transition-all duration-300">
-            <span className="relative z-10">View All Services</span>
+            <span className="relative z-10 cursor-pointer">View All Services</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </div>

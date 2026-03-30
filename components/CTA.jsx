@@ -102,7 +102,7 @@ export default function CTA() {
               </span>
             </button> */}
             <button onClick={() => window.open(SCHEDULE_DEMO_URL, "_blank")}
-              className="magnetic w-full md:w-auto px-10 py-5 border-2 border-sky-500/40 text-foreground font-bold rounded-full hover:bg-sky-500/10 hover:border-sky-400 transition-all duration-300">
+              className="cursor-pointer magnetic w-full md:w-auto px-10 py-5 border-2 border-sky-500/40 text-foreground font-bold rounded-full hover:bg-sky-500/10 hover:border-sky-400 transition-all duration-300">
               Schedule Demo
             </button>
           </div>
