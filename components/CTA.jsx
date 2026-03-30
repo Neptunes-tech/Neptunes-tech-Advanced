@@ -94,22 +94,22 @@ export default function CTA() {
           </div>
 
           <div className="relative flex flex-col md:flex-row gap-4 justify-center items-center">
-            <button className="magnetic group relative w-full md:w-auto px-10 py-5 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-sky-500/40 transition-all duration-300 overflow-hidden">
+            {/* <button className="magnetic group relative w-full md:w-auto px-10 py-5 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-sky-500/40 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10 flex items-center justify-center gap-3">
                 Get Started Free
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </button> */}
             <button onClick={() => window.open(SCHEDULE_DEMO_URL, "_blank")}
               className="magnetic w-full md:w-auto px-10 py-5 border-2 border-sky-500/40 text-foreground font-bold rounded-full hover:bg-sky-500/10 hover:border-sky-400 transition-all duration-300">
               Schedule Demo
             </button>
           </div>
 
-          <p className="relative mt-10 text-sm text-muted-foreground">
+          {/* <p className="relative mt-10 text-sm text-muted-foreground">
             No credit card required • Free 14-day trial • Cancel anytime
-          </p>
+          </p> */}
 
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-500" />
         </div>

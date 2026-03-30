@@ -107,9 +107,9 @@
 */
 
 /* Force normal cursor */
-body, a, button, [data-cursor], .cursor-hover, input, textarea, select {
+/* body, a, button, [data-cursor], .cursor-hover, input, textarea, select {
   cursor: auto !important;
-}
+} */
 
 @theme inline {
   --font-sans: 'Geist', 'Geist Fallback';
