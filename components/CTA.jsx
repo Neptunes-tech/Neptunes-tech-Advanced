@@ -5,6 +5,7 @@ import { ArrowRight, Zap, Sparkles } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ctaStats } from '@/lib/mockData'
+import { SCHEDULE_DEMO_URL } from '../lib/mockData'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -44,7 +45,7 @@ export default function CTA() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden py-24 md:py-32 bg-background">
-      
+
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-sky-600/20 rounded-full blur-[150px] animate-pulse" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-600/15 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-600/10 rounded-full blur-[100px]" />
@@ -57,7 +58,7 @@ export default function CTA() {
           className="relative rounded-3xl border border-sky-500/20 bg-card backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-sky-600/5 via-transparent to-cyan-600/5" />
-          
+
           <Sparkles className="absolute top-6 right-8 w-6 h-6 text-sky-400/40 animate-pulse" />
           <Sparkles className="absolute bottom-8 left-10 w-5 h-5 text-cyan-400/40 animate-pulse" style={{ animationDelay: '0.5s' }} />
 
@@ -100,7 +101,8 @@ export default function CTA() {
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
-            <button className="magnetic w-full md:w-auto px-10 py-5 border-2 border-sky-500/40 text-foreground font-bold rounded-full hover:bg-sky-500/10 hover:border-sky-400 transition-all duration-300">
+            <button onClick={() => window.open(SCHEDULE_DEMO_URL, "_blank")}
+              className="magnetic w-full md:w-auto px-10 py-5 border-2 border-sky-500/40 text-foreground font-bold rounded-full hover:bg-sky-500/10 hover:border-sky-400 transition-all duration-300">
               Schedule Demo
             </button>
           </div>
