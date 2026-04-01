@@ -94,7 +94,7 @@ export default function Contact() {
       .sendForm(
         "service_ti93nrp",
         "template_xwzwhzd",
-        form.current,
+        formRef.current,
         "jnxk1E3l-tEtH-OiR"
       )
       .then(
