@@ -86,10 +86,7 @@ export default function Contact() {
     })
 
     if (!formData.email || !formData.name || !formData.message) {
-      setMessageResponse({
-        success: false,
-        message: "Please Provide All Values.",
-      });
+      toast.error("Please Provide All Values.");
       return true;
     }
 
