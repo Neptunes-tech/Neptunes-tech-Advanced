@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner"
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { EMAIL } from '../lib/mockData'
 
@@ -68,7 +70,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     const button = e.currentTarget.querySelector('button')
     gsap.to(button, {
       scale: 0.95,
@@ -83,8 +85,34 @@ export default function Contact() {
       },
     })
 
+    if (!formData.email || !formData.name || !formData.message) {
+      setMessageResponse({
+        success: false,
+        message: "Please Provide All Values.",
+      });
+      return true;
+    }
+
+    emailjs
+      .sendForm(
+        "service_ti93nrp",
+        "template_xwzwhzd",
+        form.current,
+        "jnxk1E3l-tEtH-OiR"
+      )
+      .then(
+        (result) => {
+          toast.success("Email Sent Successfully");
+          console.log("SEND EMAIL SUCCESSFULLY");
+        },
+        (e) => {
+          toast.error("Failed to Send Email");
+          console.log("EMAIL UN-SUCCESSFULL", e);
+        }
+      );
+
     console.log('Form submitted:', formData)
-    
+
     gsap.to(Object.values(inputRefs.current), {
       opacity: 0,
       y: 10,
