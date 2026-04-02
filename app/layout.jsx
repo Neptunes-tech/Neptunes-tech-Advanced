@@ -14,6 +14,11 @@ export const metadata = {
     maximumScale: 1,
     userScalable: false,
   },
+  icons: {
+    icon: '/Neptunes-Logo.png',
+    shortcut: '/Neptunes-Logo.png',
+    apple: '/Neptunes-Logo.png',
+  },
 }
 
 export default function RootLayout({ children }) {
