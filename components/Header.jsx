@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
 import gsap from 'gsap'
 import { Menu, X, Sparkles } from 'lucide-react'
 import { navItems } from '@/lib/mockData'
@@ -18,6 +19,50 @@ export default function Header() {
   const navLinksRef = useRef([])
   const ctaRef = useRef(null)
   const { resolvedTheme } = useTheme()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setTimeout(() => {
+        window.history.replaceState(null, '', '/')
+      }, 100)
+    }
+  }
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    const sectionId = href.replace('/#', '')
+    
+    if (pathname === '/') {
+      scrollToSection(sectionId)
+    } else {
+      router.push(`/#${sectionId}`)
+    }
+  }
+
+  useEffect(() => {
+    if (pathname === '/' && typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '')
+      if (hash) {
+        const scrollToHash = () => {
+          const element = document.getElementById(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+            setTimeout(() => {
+              window.history.replaceState(null, '', '/')
+            }, 100)
+          }
+        }
+        
+        const timeoutId = setTimeout(scrollToHash, 300)
+        
+        return () => clearTimeout(timeoutId)
+      }
+    }
+  }, [pathname])
 
   useEffect(() => {
     setIsClient(true)
@@ -206,18 +251,19 @@ export default function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10">
           {navItems.map((item, index) => (
-            <Link
+            <a
               key={item.label}
               href={item.href}
               ref={el => navLinksRef.current[index] = el}
-              className="relative text-sm lg:text-base text-muted-foreground font-medium group py-1"
+              className="relative text-sm lg:text-base text-muted-foreground font-medium group py-1 cursor-pointer"
               onMouseEnter={(e) => handleNavLinkHover(e, index)}
               onMouseLeave={handleNavLinkHoverEnd}
+              onClick={(e) => handleNavClick(e, item.href)}
             >
               <span className="relative z-10">{item.label}</span>
               <span className="nav-underline absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-500 rounded-full opacity-0" />
               <span className="absolute inset-0 -z-10 bg-sky-500/0 group-hover:bg-sky-500/5 rounded-lg transition-colors duration-300" />
-            </Link>
+            </a>
           ))}
         </div>
 
@@ -267,18 +313,18 @@ export default function Header() {
         <div ref={navRef} className="md:hidden bg-background/98 backdrop-blur-2xl border-t border-sky-500/20">
           <div className="px-4 sm:px-6 py-6 space-y-2">
             {navItems.map((item, index) => (
-              <Link
+              <a
                 key={item.label}
                 href={item.href}
-                className="block px-4 py-3 text-base text-muted-foreground hover:text-foreground rounded-xl hover:bg-sky-500/10 transition-all duration-300 border border-transparent hover:border-sky-500/20"
-                onClick={() => setIsOpen(false)}
+                className="block px-4 py-3 text-base text-muted-foreground hover:text-foreground rounded-xl hover:bg-sky-500/10 transition-all duration-300 border border-transparent hover:border-sky-500/20 cursor-pointer"
+                onClick={(e) => { handleNavClick(e, item.href); setIsOpen(false); }}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <span className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-500/50" />
                   {item.label}
                 </span>
-              </Link>
+              </a>
             ))}
             <button className="w-full mt-6 px-6 py-3.5 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-bold rounded-full transition-all duration-300 text-base hover:shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2">
               Get Started
