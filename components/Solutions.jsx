@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle, ArrowRight } from 'lucide-react'
 import { solutions } from '@/lib/mockData'
+import { SCHEDULE_DEMO_URL } from '../lib/mockData'
 
 export default function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -30,24 +31,21 @@ export default function Solutions() {
               onClick={() => setActiveIndex(index)}
             >
               <div
-                className={`h-full p-8 rounded-2xl border transition-all duration-300 ${
-                  activeIndex === index
-                    ? 'bg-gradient-to-br ' + solution.gradient + ' text-white border-transparent shadow-2xl scale-105'
-                    : 'bg-card/50 border-border/50 text-foreground hover:border-border/80 hover-lift'
-                }`}
+                className={`h-full p-8 rounded-2xl border transition-all duration-300 ${activeIndex === index
+                  ? 'bg-gradient-to-br ' + solution.gradient + ' text-white border-transparent shadow-2xl scale-105'
+                  : 'bg-card/50 border-border/50 text-foreground hover:border-border/80 hover-lift'
+                  }`}
               >
                 <h3 className="text-2xl font-bold mb-2">{solution.title}</h3>
                 <p
-                  className={`text-sm font-semibold mb-4 transition-colors ${
-                    activeIndex === index ? 'text-white/80' : 'text-foreground/60'
-                  }`}
+                  className={`text-sm font-semibold mb-4 transition-colors ${activeIndex === index ? 'text-white/80' : 'text-foreground/60'
+                    }`}
                 >
                   {solution.subtitle}
                 </p>
                 <p
-                  className={`mb-6 leading-relaxed transition-colors ${
-                    activeIndex === index ? 'text-white/90' : 'text-foreground/70'
-                  }`}
+                  className={`mb-6 leading-relaxed transition-colors ${activeIndex === index ? 'text-white/90' : 'text-foreground/70'
+                    }`}
                 >
                   {solution.description}
                 </p>
@@ -71,7 +69,10 @@ export default function Solutions() {
           <p className="text-foreground/60 mb-6">
             Not sure which solution fits your needs?
           </p>
-          <button className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300">
+          <button
+            onClick={() => window.open(SCHEDULE_DEMO_URL, "_blank")}
+            className="cursor-pointer inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300"
+          >
             Schedule a Consultation
             <ArrowRight size={20} />
           </button>

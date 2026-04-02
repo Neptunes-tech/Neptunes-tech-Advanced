@@ -38,6 +38,7 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target='_blank'
                     className="magnetic w-10 h-10 rounded-full bg-sky-500/5 border border-sky-500/10 flex items-center justify-center text-muted-foreground hover:text-sky-500 hover:border-sky-500/50 hover:bg-sky-500/10 transition-all duration-300"
                   >
                     <Icon size={18} />
@@ -56,7 +57,7 @@ export default function Footer() {
                     {link.href.startsWith('/') ? (
                       <Link
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
+                        className="cursor-pointer text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
                       >
                         {link.label}
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 group-hover:w-full transition-all duration-300" />
@@ -64,7 +65,7 @@ export default function Footer() {
                     ) : (
                       <a
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
+                        className="cursor-pointer text-sm text-muted-foreground hover:text-sky-500 transition-colors duration-200 relative group inline-block"
                       >
                         {link.label}
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 group-hover:w-full transition-all duration-300" />

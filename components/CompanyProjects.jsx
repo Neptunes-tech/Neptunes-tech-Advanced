@@ -120,7 +120,7 @@ export default function CompanyProjects() {
           {hasMore && (
             <button
               onClick={handleViewMore}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300"
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300"
             >
               View More Projects
               <ChevronDown size={20} />
@@ -129,7 +129,7 @@ export default function CompanyProjects() {
           {canCollapse && (
             <button
               onClick={handleCollapse}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-card border border-border text-foreground font-bold rounded-xl hover:bg-card/80 hover:-translate-y-1 transition-all duration-300"
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-3 bg-card border border-border text-foreground font-bold rounded-xl hover:bg-card/80 hover:-translate-y-1 transition-all duration-300"
             >
               Show Less
               <ChevronUp size={20} />
@@ -149,7 +149,7 @@ export default function CompanyProjects() {
                 Leverage our expertise to create powerful, scalable solutions for your business.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300 flex-shrink-0 whitespace-nowrap">
+            <button className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300 flex-shrink-0 whitespace-nowrap">
               Start Your Project
               <ArrowRight size={20} />
             </button>

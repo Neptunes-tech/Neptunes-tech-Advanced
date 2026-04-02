@@ -23,7 +23,7 @@ export default function Home() {
       <Services />
       <Solutions />
       <CompanyProjects />
-      <MasonryPortfolio />
+      {/* <MasonryPortfolio /> */}
       <Testimonials />
       <CTA />
       <Contact />

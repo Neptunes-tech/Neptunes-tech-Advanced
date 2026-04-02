@@ -2,7 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner"
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { EMAIL } from '../lib/mockData'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -67,7 +70,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     const button = e.currentTarget.querySelector('button')
     gsap.to(button, {
       scale: 0.95,
@@ -82,8 +85,31 @@ export default function Contact() {
       },
     })
 
+    if (!formData.email || !formData.name || !formData.message) {
+      toast.error("Please Provide All Values.");
+      return true;
+    }
+
+    emailjs
+      .sendForm(
+        "service_ti93nrp",
+        "template_xwzwhzd",
+        formRef.current,
+        "jnxk1E3l-tEtH-OiR"
+      )
+      .then(
+        (result) => {
+          toast.success("Email Sent Successfully");
+          console.log("SEND EMAIL SUCCESSFULLY");
+        },
+        (e) => {
+          toast.error("Failed to Send Email");
+          console.log("EMAIL UN-SUCCESSFULL", e);
+        }
+      );
+
     console.log('Form submitted:', formData)
-    
+
     gsap.to(Object.values(inputRefs.current), {
       opacity: 0,
       y: 10,
@@ -103,17 +129,17 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@neptunestech.com',
+      value: EMAIL,
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+923022838789',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'PK',
     },
   ]
 
